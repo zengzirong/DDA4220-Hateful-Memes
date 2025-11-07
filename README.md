@@ -23,7 +23,12 @@ Please follow prerequisites for the Hateful Memes dataset at [this link](https:/
 Run training with the following command on the Hateful Memes dataset:
 
 ```
-MMF_USER_DIR="." mmf_run config="configs/experiments/defaults.yaml"  model=concat_vl dataset=hateful_memes training.num_workers=0
+MMF_DATA_DIR="<path-to-project>/data" \
+MMF_USER_DIR="<path-to-project>" \
+mmf_run config="configs/experiments/defaults.yaml" \
+model=concat_vl \
+dataset=hateful_memes \
+training.num_workers=0
 ```
 
 We set `training.num_workers=0` here to avoid memory leaks with fasttext.
